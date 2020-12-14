@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from ui_library.ui_lib import Page
+from framework.ui_libs.ui_lib import Page
 from ui_library.dad_file_with_js import drag_and_drop_file
 import os
 import sys

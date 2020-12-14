@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 from random import choice
-from ui_library.ui_lib import Page
+from framework.ui_libs.ui_lib import Page
 from time import sleep
 import random
 from tools.utils import string_generator, utc_timestamp

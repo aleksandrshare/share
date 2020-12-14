@@ -1,4 +1,4 @@
-from ui_library.ui_lib import Page
+from framework.ui_libs.ui_lib import Page
 from ui_library.dad_file_with_js import drag_and_drop_file
 from framework.other_proj_ui.ui_auto.fc_helpers import decorator_for_change_selenium_wait_and_return_after
 from tools.utils import now_timestamp

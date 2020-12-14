@@ -3,17 +3,11 @@
 
 import pytest
 from configs.modify_data import participants_params_payer, participants_params_payee
-from configs.settings import stands
 import logging
-from tools.utils import extract_domain_from_url, byte_to_Gb, to_fixed, remove_file
-from framework.other_proj.api_auto.fc_api_workers import LKUapiPayee, LKUapiPayer
-from framework.other_proj.ui_auto.fc_ui_workers import LKOOclass, LKUclass, LKOZclass
-from ui_library.choose_driver import choose_and_cofig_driver
+from framework.platform.api_auto.pl_api_workers import LKOApiAdmin, OnlyAdmin
+from framework.other_proj_ui.ui_auto.fc_ui_workers import LKOOclass, LKUclass, LKOZclass
+from framework.ui_libs.choose_driver import choose_and_cofig_driver
 from configs.settings import url_to_selenoid
-from time import time
-from configs.dictionary_variables import prometheus_queries
-import tools.monitoring as mon
-import datetime
 from tests.conftest import _configure_capabilities
 
 logger = logging.getLogger(__name__)
@@ -24,14 +18,14 @@ def pytest_addoption(parser):
 
 
 @pytest.fixture(scope='session', autouse=True)
-def shared_client_payer(stand, users_dss_pin):
-    client = LKUapiPayer(stand, users_dss_pin)
+def shared_client_payer(stand):
+    client = LKOApiAdmin(stand)
     return client
 
 
 @pytest.fixture(scope='session', autouse=True)
-def shared_client_payee(stand, users_dss_pin):
-    client = LKUapiPayee(stand, users_dss_pin)
+def shared_client_payee(stand):
+    client = OnlyAdmin(stand)
     return client
 
 

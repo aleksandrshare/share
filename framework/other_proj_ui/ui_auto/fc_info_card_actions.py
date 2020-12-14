@@ -1,10 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from ui_library.ui_lib import Page
+from framework.ui_libs.ui_lib import Page
 from configs.modify_data import test_modify_data
-from framework.other_proj_ui.ui_auto.fc_helpers import decorator_for_change_selenium_wait_and_return_after
-from configs.dictionary_variables import pub_event_type_info_card
 import allure
 
 

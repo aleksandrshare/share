@@ -1,4 +1,4 @@
-from ui_library.ui_lib import Page
+from framework.ui_libs.ui_lib import Page
 from framework.other_proj_ui.ui_auto.fc_helpers import collect_locator
 from random import choice
 from tools.utils import get_jpath_value

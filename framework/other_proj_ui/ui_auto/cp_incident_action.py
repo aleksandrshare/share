@@ -1,4 +1,4 @@
-from ui_library.ui_lib import Page
+from framework.ui_libs.ui_lib import Page
 from os import path
 import allure
 
