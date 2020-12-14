@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+<table border="1">
+    <tr style="font-weight:bold">
+        <td>{{testrun_name}}</td>
+    </tr>
+    <tr style="background-color:#BDFFBC;">
+        <td>{{testrun_info.replace('\n', '<br>')}}</td>
+    </tr>
+    {% for testsuite_name, test_info in test_dict.items() %}
+        <tr style="font-weight:bold;">
+            <td>{{testsuite_name}}</td>
+        </tr>
+        {% for test_name, test_error in test_info.items() %}
+                <tr style="background-color:#FFFF00;">
+                    <td>{{test_name}}</td>
+                </tr>
+                {% for err_type, err_value in test_error.items() %}
+                    <tr style="background-color:#{{'E3E3E3' if err_type == 'skip' or err_type == 'xfail' else 'FFDFDF'}};">
+                        <td>{{"<b><u>{}:</u></b><br>{}".format(err_type, err_value.replace('\n', '<br>'))}}</td>
+                    </tr>
+                {% endfor %}
+        {% endfor %}
+    {% endfor %}
+</table>
+</body>
+</html>
