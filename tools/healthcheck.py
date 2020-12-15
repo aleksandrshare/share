@@ -6,7 +6,7 @@ import requests
 from time import sleep
 from urllib.parse import urlparse
 from pathlib import Path
-from framework.other_proj.queries.fc_pg_queries import PgSQLQueries
+from framework.other_proj_ui.queries.fc_pg_queries import PgSQLQueries
 import os
 from configs.service_ports import ports
 
@@ -74,23 +74,11 @@ def health_check_db_rabbit(rabbit_host, db_host):
     return result
 
 
-def health_check_services(stand_url, stand_type, do_full_check=False):
+def health_check_services(stand_url, stand_type):
     """ функция проверки сервисов на стендах """
     stand_name = urlparse(stand_url).hostname
     LOGGER.info('Check services on {}'.format(stand_name))
     result = True
-    # if do_full_check:
-    #     LOGGER.info('Проверяются все сервисы')
-    #     if stand_type == 'LKU':
-    #         ports = ports_lku
-    #     else:
-    #         ports = ports_lko
-    # else:
-    #     LOGGER.info('Проверяются только основные сервисы')
-    #     if stand_type == 'LKU':
-    #         ports = main_ports_lku
-    #     else:
-    #         ports = main_ports_lko
     for port in ports.keys():
         url = 'http://{}:{}/api/health'.format(stand_name, port)
         try:

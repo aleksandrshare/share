@@ -33,7 +33,6 @@ class DataBaseClient:
 
     def _get_table(self, db_name, table_name, schema=None, column=None):
         self._init_engine(db_name)
-        # Если хотим создать образ таблицы с 1 колонкой
         if column:
             table = sa.table(table_name, sa.Column(column))
             return table
@@ -57,7 +56,7 @@ class DataBaseClient:
                     sleep(self.timeout)
                 else:
                     break
-        except:
+        except Exception:
             self._close_engine()
             self.logger.info('Close connection to database {}:{}'.format(self.host, self.port))
             raise DataBaseException("Failed executing db request")
@@ -76,7 +75,6 @@ class DataBaseClient:
         return result
 
     def execute_select(self, table, need_special_columns=None, condition=None, **kwargs):
-        # Если выбираем конкретные поля при выводе запроса
         if need_special_columns:
             if isinstance(need_special_columns, list):
                 specific_column = []
@@ -87,7 +85,6 @@ class DataBaseClient:
                 specific_column = table.c.get(need_special_columns)
                 request = sa.select([specific_column], condition, **kwargs)
         else:
-        # Иначе выбираем все поля запроса
             request = sa.select([table], condition, **kwargs)
         result = self.execute_request(request)
         return result
