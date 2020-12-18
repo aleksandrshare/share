@@ -1,11 +1,11 @@
 # coding=utf-8
-from tools.api_client.user_client import AutoCheckUserClient
+from framework.api_libs.user_client import AutoCheckUserClient
 
 
 class SubjectsObjectsSystemsCore(AutoCheckUserClient):
     """Класс набора функций для работы с сервисом PT SP SubjectsObjectsSystems"""
 
-    sos_prefix = '/api'
+    sos_prefix = 'handler'
 
     def get_lko_users_list(self, allowed_codes=[200], retry_attempts=0, retry_delay=1):
         url = self.auth_url + self.sos_prefix + '/users'

@@ -5,7 +5,7 @@ from framework.api_libs.user_client import AutoCheckUserClient
 class BulletinsCore(AutoCheckUserClient):
     """"""
 
-    bulletins_prefix = '/api/bulletins'
+    bulletins_prefix = 'handler'
 
     def create_publication(self, pub_data, allowed_codes=[200], retry_attempts=0, retry_delay=1):
         """"""

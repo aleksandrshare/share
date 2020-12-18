@@ -8,7 +8,7 @@ from tools.api_client.user_client import AutoCheckUserClient
 
 class SystemInfoCore(AutoCheckUserClient):
 
-    SYS_INFO_PREFIX = ":7042/api/systemInfo/version"
+    SYS_INFO_PREFIX = "handler"
 
     def sysInfo_get_all_service(self, allowed_codes=[200], retry_attempts=0, retry_delay=1):
         """

@@ -1,9 +1,9 @@
-from tools.api_client.user_client import AutoCheckUserClient
+from framework.api_libs.user_client import AutoCheckUserClient
 
 
 class ReportsCore(AutoCheckUserClient):
     """"""
-    reports_prefix = '/api/dashboards/reports'
+    reports_prefix = 'handler'
 
     def get_task_id_incident_export_report(self, allowed_codes=[200], retry_attempts=5, retry_delay=1):
         """"""

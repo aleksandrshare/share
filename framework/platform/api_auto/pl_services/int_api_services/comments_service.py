@@ -3,7 +3,7 @@ from framework.api_libs.user_client import AutoCheckUserClient
 
 class CommentCore(AutoCheckUserClient):
     """"""
-    comments_prefix = '/api/comments'
+    comments_prefix = 'handler'
 
     def get_all_comments_for_entity(self, entity_type, entity_id, allowed_codes=[200], retry_attempts=0, retry_delay=1):
         """"""

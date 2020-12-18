@@ -139,9 +139,9 @@ class IncidentsPage(Page):
         assert description == expected_description, (f'Не совпадает описание инцидента, '
                                                      f'ожидаемое {expected_description}, отображаемое {description}')
 
-    def ip_open_gossopka_tab(self):
+    def ip_open_gos_tab(self):
         """ метод кликает по вкладке Взаимодействие"""
-        self.find_and_click(*self.locators.IP_INCIDENT_VIEW_GOSSOPKA_TAB)
+        self.find_and_click(*self.locators.IP_INCIDENT_VIEW_GOS_TAB)
 
     def _check_message_with_text(self, text, locator):
         """ обобщающий метод проверки наличия сообщения с текстом в заданном локаторе """
@@ -156,83 +156,83 @@ class IncidentsPage(Page):
                 break
         assert is_found, f'Не найдено сообщение с текстом {text}'
 
-    def ip_check_system_message_present_on_gossopka_tab(self, text):
+    def ip_check_system_message_present_on_gos_tab(self, text):
         """ метод проверки отображения системного сообщения на вкладке Взаимодействие с  """
-        self._check_message_with_text(text, self.locators.IP_INCIDENT_VIEW_GOSSOPKA_SYSTEM_MESSAGE)
+        self._check_message_with_text(text, self.locators.IP_INCIDENT_VIEW_GOS_SYSTEM_MESSAGE)
 
-    def ip_check_message_present_on_gossopka_tab(self, text=None):
+    def ip_check_message_present_on_gos_tab(self, text=None):
         """ метод проверки отображения сообщения на вкладке Взаимодействие с  """
         if not text:
             text = cert_modify_data['send_message']
-        self._check_message_with_text(text, self.locators.IP_INCIDENT_VIEW_GOSSOPKA_MESSAGE)
+        self._check_message_with_text(text, self.locators.IP_INCIDENT_VIEW_GOS_MESSAGE)
 
-    def ip_check_action_present_on_gossopka_tab(self, text=None):
+    def ip_check_action_present_on_gos_tab(self, text=None):
         """ метод проверки отображения принятой меры на вкладке Взаимодействие с  """
         if not text:
             text = cert_modify_data['send_action']
-        self._check_message_with_text(text, self.locators.IP_INCIDENT_VIEW_GOSSOPKA_ACTION)
+        self._check_message_with_text(text, self.locators.IP_INCIDENT_VIEW_GOS_ACTION)
 
-    def ip_check_recommendation_present_on_gossopka_tab(self, text=None):
+    def ip_check_recommendation_present_on_gos_tab(self, text=None):
         """ метод проверки отображения рекомендации на вкладке Взаимодействие с  """
         if not text:
             text = cert_modify_data['send_recommendation']
-        self._check_message_with_text(text, self.locators.IP_INCIDENT_VIEW_GOSSOPKA_RECOMMENDATION)
+        self._check_message_with_text(text, self.locators.IP_INCIDENT_VIEW_GOS_RECOMMENDATION)
 
-    def ip_click_compete_interaction_on_gossopka_tab(self):
+    def ip_click_compete_interaction_on_gos_tab(self):
         """ метод кликает чек-бок Завершить взаимодействие  на вкладке Взаимодействие с """
-        self.find_and_click(*self.locators.IP_INCIDENT_VIEW_GOSSOPKA_COMPLETE_INTERACTION)
+        self.find_and_click(*self.locators.IP_INCIDENT_VIEW_GOS_COMPLETE_INTERACTION)
 
-    def ip_click_send_btn_on_gossopka_tab(self):
+    def ip_click_send_btn_on_gos_tab(self):
         """ метод нажимает кнопку Отправить на вкладке Взаимодействие"""
         self.find_and_click(*self.locators.IP_INCIDENT_VIEW_GOSSOPKA_SEND_BTN)
 
-    def ip_click_gossopka_message_type_select(self):
+    def ip_click_gos_message_type_select(self):
         """ метод кликает по выпадашке с типами сообщений на вкладке Взаимодействие с """
-        self.find_and_click(*self.locators.IP_INCIDENT_VIEW_GOSSOPKA_MESSAGE_TYPE_SELECT)
+        self.find_and_click(*self.locators.IP_INCIDENT_VIEW_GOS_MESSAGE_TYPE_SELECT)
 
-    def ip_gossopka_select_message(self):
+    def ip_gos_select_message(self):
         """ метод выбирает тип Сообщение в выпадашке с типами на вкладке Взаимодействие с """
-        self.find_and_click(*self.locators.IP_INCIDENT_VIEW_GOSSOPKA_SELECT_MESSAGE_ITEM)
+        self.find_and_click(*self.locators.IP_INCIDENT_VIEW_GOS_SELECT_MESSAGE_ITEM)
 
-    def ip_gossopka_select_action(self):
+    def ip_gos_select_action(self):
         """ метод выбирает тип Принятая мера в выпадашке с типами на вкладке Взаимодействие с """
-        self.find_and_click(*self.locators.IP_INCIDENT_VIEW_GOSSOPKA_SELECT_ACTION_ITEM)
+        self.find_and_click(*self.locators.IP_INCIDENT_VIEW_GOS_SELECT_ACTION_ITEM)
 
-    def ip_gossopka_select_comment(self):
+    def ip_gos_select_comment(self):
         """ метод выбирает тип Комментарий в выпадашке с типами на вкладке Взаимодействие с """
-        self.find_and_click(*self.locators.IP_INCIDENT_VIEW_GOSSOPKA_SELECT_COMMENT_ITEM)
+        self.find_and_click(*self.locators.IP_INCIDENT_VIEW_GOS_SELECT_COMMENT_ITEM)
 
-    def ip_gossopka_fill_message_input(self, text):
+    def ip_gos_fill_message_input(self, text):
         """ метод вводит текст в поле для сообщений на вкладке Взаимодействие с """
-        self.find_and_clear_element(*self.locators.IP_INCIDENT_VIEW_GOSSOPKA_MESSAGE_INPUT)
-        self.find_and_fill_element(text, *self.locators.IP_INCIDENT_VIEW_GOSSOPKA_MESSAGE_INPUT)
+        self.find_and_clear_element(*self.locators.IP_INCIDENT_VIEW_GOS_MESSAGE_INPUT)
+        self.find_and_fill_element(text, *self.locators.IP_INCIDENT_VIEW_GOS_MESSAGE_INPUT)
 
-    def ip_send_message_to_gossopka(self, text=None):
+    def ip_send_message_to_gos(self, text=None):
         """ объединяющий шаги метод для отправки сообщения в  """
         if not text:
             text = 'Сообщение от  ' + now_timestamp()
-        test_modify_data['fincert_message'] = text
-        self.ip_click_gossopka_message_type_select()
-        self.ip_gossopka_select_message()
-        self.ip_gossopka_fill_message_input(text)
-        self.ip_click_send_btn_on_gossopka_tab()
+        test_modify_data['fc_message'] = text
+        self.ip_click_gos_message_type_select()
+        self.ip_gos_select_message()
+        self.ip_gos_fill_message_input(text)
+        self.ip_click_send_btn_on_gos_tab()
 
-    def ip_send_action_to_gossopka(self, text=None):
+    def ip_send_action_to_gos(self, text=None):
         """ объединяющий шаги метод для отправки принятой меры в  """
         if not text:
             text = 'Принятая мера от  ' + now_timestamp()
-        test_modify_data['fincert_action'] = text
-        self.ip_click_gossopka_message_type_select()
-        self.ip_gossopka_select_action()
-        self.ip_gossopka_fill_message_input(text)
-        self.ip_click_send_btn_on_gossopka_tab()
+        test_modify_data['fc_action'] = text
+        self.ip_click_gos_message_type_select()
+        self.ip_gos_select_action()
+        self.ip_gos_fill_message_input(text)
+        self.ip_click_send_btn_on_gos_tab()
 
-    def ip_send_comment_to_gossopka(self, text=None):
+    def ip_send_comment_to_gos(self, text=None):
         """ объединяющий шаги метод для отправки комментария в  """
         if not text:
             text = 'Комментарий от  ' + now_timestamp()
-        test_modify_data['fincert_comment'] = text
-        self.ip_click_gossopka_message_type_select()
-        self.ip_gossopka_select_comment()
-        self.ip_gossopka_fill_message_input(text)
-        self.ip_click_send_btn_on_gossopka_tab()
+        test_modify_data['fc_comment'] = text
+        self.ip_click_gos_message_type_select()
+        self.ip_gos_select_comment()
+        self.ip_gos_fill_message_input(text)
+        self.ip_click_send_btn_on_gos_tab()

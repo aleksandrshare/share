@@ -4,11 +4,11 @@ from framework.platform.api_auto.pl_services.int_api_services.attachments_servic
 
 
 class IntegrApiIncidentsCore(IncidentsCore):
-    incidents_prefix = '/api/v1/incidents'
+    incidents_prefix = 'handler'
 
 
 class IntegrApiAttachmentsCore(AttachmentsCore):
-    attachments_prefix = '/api/v1/attachments'
+    attachments_prefix = 'handler'
 
 
 class IntegrApiServices(IntegrationApiCore, IntegrApiIncidentsCore, IntegrApiAttachmentsCore):

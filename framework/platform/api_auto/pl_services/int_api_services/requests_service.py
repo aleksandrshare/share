@@ -3,7 +3,7 @@ from framework.api_libs.user_client import AutoCheckUserClient
 
 class RequestsCore(AutoCheckUserClient):
     """"""
-    requests_prefix = '/api/requests'
+    requests_prefix = 'handler'
 
     def get_requests(self, search_query=None, req_filter=None, user_filters=None, sort=None, sort_order=None,
                      assigned_to=None, participant=None, limit=None, offset=None, min_created_date=None,

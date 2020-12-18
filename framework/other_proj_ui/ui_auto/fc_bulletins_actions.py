@@ -21,7 +21,7 @@ class BulletinsLkoPage(Page):
 
     # пути к файлам для загрузки в бюллетень
     BP_FILE_1 = os.getcwd() + '/test_data/Doc_for_test.txt'
-    BP_FILE_2 = os.getcwd() + '/test_data/FinCERT_ИР.pdf'
+    BP_FILE_2 = os.getcwd() + '/test_data/fc_ИР.pdf'
     BP_FILE_3 = os.getcwd() + '/test_data/entities_description.xlsx'
     BP_FILE_4 = os.getcwd() + '/test_data/other.csv'
     BP_FILE_5 = os.getcwd() + '/test_data/Протокол.docx'

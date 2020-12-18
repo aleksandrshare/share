@@ -5,7 +5,7 @@ from framework.api_libs.user_client import AutoCheckUserClient
 
 class AttachmentsCore(AutoCheckUserClient):
     """"""
-    attachments_prefix = '/api/attachments'
+    attachments_prefix = 'handler'
 
     def download_attachment(self, attach_id, allowed_codes=[200], retry_attempts=0, retry_delay=1):
         """"""

@@ -3,7 +3,7 @@ from framework.api_libs.user_client import AutoCheckUserClient
 
 class NotificationCore(AutoCheckUserClient):
     """"""
-    notification_prefix = '/api/notifications'
+    notification_prefix = 'handler'
 
     def get_unread_notifications(self, allowed_codes=[200], retry_attempts=0, retry_delay=1):
         url = self.auth_url + self.notification_prefix + '?filter=unread'

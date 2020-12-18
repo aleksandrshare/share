@@ -4,7 +4,7 @@ from framework.api_libs.user_client import IamUserClient
 
 
 class IamCore(IamUserClient):
-    iam_prefix = '/ptms/api/sso/v1'
+    iam_prefix = 'handler'
 
     def get_iam_sites(self):
         url = self.auth_url + self.iam_prefix + '/sites'

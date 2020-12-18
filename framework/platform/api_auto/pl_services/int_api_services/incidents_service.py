@@ -5,7 +5,7 @@ from framework.api_libs.user_client import AutoCheckUserClient
 class AlertsCore(AutoCheckUserClient):
     """"""
 
-    alerts_prefix = '/api/alerts'
+    alerts_prefix = 'handler'
 
     def get_alerts(self, limit=100, offset=None, user_filters=None, search_query=None, filter=None, query_string=None,
                    allowed_codes=[200], retry_attempts=0, retry_delay=1):

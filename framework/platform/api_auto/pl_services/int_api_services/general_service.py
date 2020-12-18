@@ -5,7 +5,7 @@ from tools.utils import extract_domain_from_url
 
 class ConfigurationFilesCore(AutoCheckUserClient):
     """"""
-    prefix = '/api/configuration-files'
+    prefix = 'handler'
 
     def upload_configuration_files(self, file_data, entity_type, allowed_codes=[200], retry_attempts=5, retry_delay=1):
         """"""

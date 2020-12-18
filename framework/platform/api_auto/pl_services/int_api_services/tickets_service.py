@@ -3,7 +3,7 @@ from framework.api_libs.user_client import AutoCheckUserClient
 
 class TicketsCore(AutoCheckUserClient):
     """"""
-    tickets_prefix = '/api/tickets'
+    tickets_prefix = 'handler'
 
     def create_new_ticket(self, json_data, allowed_codes=[200], retry_attempts=0, retry_delay=1):
         url = self.auth_url + self.tickets_prefix

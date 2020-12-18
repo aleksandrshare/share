@@ -7,7 +7,7 @@ class IntegrationApiCore(ExternalApiUserClient):
     """"""
 
     def __init__(self, **kwargs):
-        self.integr_api_prefix = '/api/v1'
+        self.integr_api_prefix = 'handler'
         super().__init__(**kwargs)
 
     def integr_api_check_async_id(self, async_id, allowed_codes=[200], retry_attempts=0, retry_delay=1,

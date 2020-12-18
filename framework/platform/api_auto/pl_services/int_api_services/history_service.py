@@ -3,7 +3,7 @@ from framework.api_libs.user_client import AutoCheckUserClient
 
 class HistoryCore(AutoCheckUserClient):
     """"""
-    history_prefix = '/api/history'
+    history_prefix = 'handler'
 
     def get_entity_history(self, entity_type, entity_id, allowed_codes=[200], retry_attempts=0, retry_delay=1):
         """"""

@@ -5,7 +5,7 @@ import yaml
 class ConfigurationCore(AutoCheckUserClient):
     """Класс набора функций для работы с сервисом PT SP ConfigurationService"""
 
-    configuration_prefix = '/api/configuration'
+    configuration_prefix = 'handler'
 
     def cc_download_config_file(self, allowed_codes=[200], retry_attempts=0, retry_delay=1):
         url = self.auth_url + self.configuration_prefix + '/files'

@@ -7,7 +7,7 @@ from framework.api_libs.user_client import AutoCheckUserClient
 class ConnectorsCore(AutoCheckUserClient):
     """"""
 
-    connectors_prefix = '/api/connectors'
+    connectors_prefix = 'handler'
 
     def get_connectors(self, allowed_codes=[200], retry_attempts=0, retry_delay=1):
         """"""

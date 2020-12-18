@@ -1,12 +1,12 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-from tools.api_client.user_client import AutoCheckUserClient
+from framework.api_libs.user_client import AutoCheckUserClient
 
 
 class FiasCore(AutoCheckUserClient):
     """Класс набора функций для работы с сервисом PT SP Fias"""
 
-    fias_prefix = '/api/address'
+    fias_prefix = 'handler'
 
     def get_address_data_by_oktmo(self, oktmo, allowed_codes=[200], retry_attempts=0, retry_delay=1):
         """
