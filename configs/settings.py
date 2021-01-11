@@ -49,36 +49,6 @@ stands = {
                             'GROUP_ID': '13c9ae00-9280-0001-0000-000000000005'
                         },
 }
-#########################################################
 
 #########################################################
-inc_type_ext = ('malware', 'socialEngineering', 'vulnerabilities', 'spams',
-             'controlCenters', 'phishingAttacks', 'prohibitedContents',
-             'maliciousResources', 'other', 'sim')
-inc_type_int = ('malware', 'socialEngineering', 'vulnerabilities', 'spams',
-             'controlCenters', 'phishingAttacks', 'prohibitedContents',
-             'maliciousResources', 'other', 'bruteForces', 'ddosAttacks',
-             'scanPorts', 'trafficHijackAttacks', 'atmAttacks', 'changeContent')
-#########################################################
-# for json generator
-paths_map = {
-    'path/contract.yaml': ['/api/incidents', '/api/incidents/count', '/api/incidents/list',
-                         '/api/incidents/{id}', '/api/incidents/{id}/status',
-                         '/api/incidents/brief', '/api/incidents/{id}/actions',
-                         '/api/incidents/{id}/recommendations', '/api/incidents/{id}/campaigns',
-                         '/api/incidents/filters',
-                         '/api/incidents/filters/{id}/values', '/api/incidents/projections/rebuild',
-                         '/api/incidents/assign',
-                         '/api/incidents/{id}/assign', '/api/incidents/status/possible',
-                         '/api/incidents/status',
-                         '/api/incidents/predefined-filters', '/api/incidents/validate/{path}',
-                         '/api/incidents/short'],
-    'path/contract_two.yaml': ['/api/alerts', '/api/alerts/ingest', '/api/alerts/count', '/api/alerts/list',
-                               '/api/alerts/{id}', '/api/alerts/incidents', '/api/alerts/include',
-                               '/api/alerts/{id}/include',
-                               '/api/alerts/markAsFalsePositive', '/api/alerts/unmarkAsFalsePositive',
-                               '/api/alerts/assign',
-                               '/api/alerts/{id}/assign', '/api/alerts/sagas/{correlationId}',
-                               '/api/alerts/filters',
-                               '/api/alerts/filters/{id}/values', '/api/alerts/predefined-filters']
-}
+
